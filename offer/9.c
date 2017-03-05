@@ -17,7 +17,9 @@ int main()
     printf("%ld\n",JumpFloor(n));
 }
 
-long JumpFloor(int n)
+
+//解法1
+/*long JumpFloor(int n)
 {
     if(n == 0)
         return 0;
@@ -30,4 +32,26 @@ long JumpFloor(int n)
         result += JumpFloor(n - i);
     }
     return result;
+}*/
+
+//解法2
+/*
+long JumpFloor(int n)
+{
+    if(n <= 0)
+        return 0;
+    else if(n == 1)
+        return 1;
+    else
+        return 2 * JumpFloor(n - 1);
+}
+*/
+
+//解法3
+long JumpFloor(int n)
+{
+    if(n > 0)
+        return 1 << --n;
+    else
+        return 0;
 }
