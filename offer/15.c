@@ -23,11 +23,11 @@ list *Reverse(list *pre,list *Header)
     {
         list *temp = Header->next;
         Header->next = pre;
-        Reverse(Header,temp);
+        list *new_head = Reverse(Header,temp);
         printf("%d\n",Header->element);
     }
 
-    return Header;
+    return new_head;
 }
 
 
