@@ -32,6 +32,11 @@ node IsSubtree(node A,node B)
     //如果A是NULL，因为前面已经判断了B不是NULL，所以返回false
     if(A == NULL)
         return false;
+//更高效的写法
+//利用短路原理
+
+/*if(B == NULL || A == NULL)
+    return NULL;*/
 
     if(A->element == B->element)
     {
@@ -49,6 +54,9 @@ node HasSubtree(node A,node B)
         return false;
     if(A == NULL)
         return false;
-
+//同样的高效方法
+/* if(B == NULL || A == NULL)
+ * return false;
+ */
     return IsSubtree(A,B) || HasSubtree(A->left,B) || HasSubtree(A->right,B);
 }
